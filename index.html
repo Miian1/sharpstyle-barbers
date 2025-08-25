@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="assets/img/fav.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SharpStyle Barbers | Look Sharp, Feel Fresh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
+    <style>
+      .glow-letter {
+        transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        display: inline-block; /* Needed for transform */
+        cursor: pointer;
+      }
+      .glow-letter:hover {
+        color: #FF8C00; /* deep-orange */
+        text-shadow: 0 0 8px #FF8C00, 0 0 16px rgba(255, 140, 0, 0.5);
+        transform: scale(1.1) translateY(-2px);
+      }
+      .dark .glow-letter:hover {
+        color: #FFD700; /* pale-gold */
+        text-shadow: 0 0 8px #FFD700, 0 0 16px rgba(255, 215, 0, 0.5);
+      }
+       /* For text that already has a specific color */
+      .text-deep-orange .glow-letter:hover, .text-pale-gold .glow-letter:hover,
+      .text-rust-red .glow-letter:hover, .text-burnt-sienna .glow-letter:hover, .text-forest-green .glow-letter:hover {
+         color: inherit; /* Keep original color from parent */
+         text-shadow: 0 0 10px #ffffff, 0 0 20px currentColor, 0 0 30px currentColor;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'light-gray': '#F5F5F5',
+              'charcoal-gray': '#36454F',
+              'deep-orange': '#FF8C00',
+              'warm-taupe': '#B7A68D',
+              'rich-brown': '#5C4033',
+              'pale-gold': '#FFD700',
+              'burnt-sienna': '#E97451',
+              'polished-silver': '#D9D9D9',
+              'black': '#000000',
+              'forest-green': '#228B22',
+              'rust-red': '#B7410E',
+              'medium-gray': '#808080',
+              'dark-midnight-blue': '#0E1428',
+              'off-white': '#F5F5DC',
+              'creamy-white': '#FFFDD0',
+            },
+            fontFamily: {
+              'poppins': ['Poppins', 'sans-serif'],
+              'inter': ['Inter', 'sans-serif'],
+            },
+            animation: {
+              'fade-in': 'fadeIn 1s ease-in-out',
+              'fade-in-up': 'fadeInUp 1s ease-in-out',
+              'float': 'float 6s ease-in-out infinite',
+              'glow': 'glow 4s infinite ease-in-out',
+              'pulse-glow': 'pulseGlow 2.5s infinite ease-in-out',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              float: {
+                '0%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-20px)' },
+                '100%': { transform: 'translateY(0px)' },
+              },
+              glow: {
+                '0%, 100%': { 'box-shadow': '0 0 20px -5px var(--glow-color)' },
+                '50%': { 'box-shadow': '0 0 35px 5px var(--glow-color)' }
+              },
+              pulseGlow: {
+                '0%, 100%': { transform: 'scale(1)', 'box-shadow': '0 0 10px var(--glow-color)' },
+                '50%': { transform: 'scale(1.02)', 'box-shadow': '0 0 25px var(--glow-color)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-light-gray dark:bg-dark-midnight-blue transition-colors duration-500">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
